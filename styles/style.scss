@@ -1,0 +1,385 @@
+@use "sass:math";
+
+@import 'colors.scss';
+@import 'mixins.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@function toVw($target) {
+  $vw-context: (1440 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+body{
+    font-size: toVw(14px);
+    font-family: 'Bebas Neue','Open Sans';
+    color: $c-grey;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    color: $c-white;
+}
+
+ul{
+    list-style: none;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: auto;
+    width: toVw(941px);
+}
+
+.btn.blue{
+    cursor: pointer;
+    padding: toVw(11px) toVw(29px);
+    border: none;
+    font-size: toVw(13px);
+    font-weight: 400;
+    color: $c-white;
+    background-color: $c-blue;
+    &:active{
+        box-shadow: 5px 5px 50px black;
+    }
+}
+
+.first-screen{
+    @include background-default();
+    background-image: url('../images/first-screen-bg.png');
+    height: toVw(768px);
+    &-logo{
+        display: flex;
+        justify-content: center;
+        padding-top: toVw(41px);
+        margin-bottom: toVw(317px);
+        img{
+            height: toVw(23px);
+            width: toVw(102px);
+        }
+    }
+    &-title{
+        text-align: center;
+        color: $c-white;
+        h1{
+            font-size: toVw(60px);
+            font-weight: 400;
+
+        }
+        h4{
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: toVw(16px);
+            margin-bottom: toVw(221px);
+        }
+        a{
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: toVw(11px);
+        }
+    }
+}
+
+.navbar{
+    display: flex;
+    height: toVw(65px);
+    padding-top: toVw(24px);
+    padding-bottom: toVw(24px);
+    &-logo{
+        margin-right: toVw(450px);
+        img{
+            width: toVw(80px);
+            height: toVw(18px);
+        }
+    }
+    &-menu{
+        ul{
+            font-family: 'Open Sans';
+            @include flex-between();
+            gap: toVw(40px);
+            font-size: toVw(12px);
+            a{
+                color: $c-grey;
+            }
+            a.active{
+                color: $c-blue;
+            }
+        }
+    }
+}
+
+hr{
+    color: #E6E6E6;
+    margin-bottom: toVw(100px);
+}
+
+.about-us{
+    &-title{
+        text-align: center;
+        h4{
+            font-family: 'Open Sans';
+            font-size: toVw(18px);
+        }
+    }
+    hr{
+        margin: auto;
+        margin-top: toVw(16px);
+        margin-bottom: toVw(61px);
+        width: toVw(50px);
+        background-color: $c-blue;
+        height: toVw(2px);
+        border: none;
+    }
+    &-info{
+        display: flex;
+        margin-bottom: toVw(117px);
+        &-text{
+            margin-right: toVw(84px);
+            h2{
+                font-family: 'Open Sans';
+                font-size: toVw(20px);
+                font-weight: 700;
+                margin-bottom: toVw(30px);
+                span{
+                    color: $c-blue;
+                }
+            }
+            p{
+                font-family: 'Open Sans';
+                font-size: toVw(13px);
+            }
+        }
+        &-images{
+            @include flex-between();
+            &-image{
+                margin-right: toVw(20px);
+                width: toVw(140px);
+                height: toVw(224px);
+                h1{
+                    padding: toVw(22px) toVw(60px) toVw(156px) toVw(16px);
+                    color: $c-white;
+                    font-family: 'Open Sans';
+                    font-size: toVw(24px);
+                    font-weight: 800;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+                &.we-plan{
+                    @include background-default();
+                    background-image: url('../images/we-plan-img.png');
+                }
+                &.we-manage{
+                    @include background-default();
+                    background-image: url('../images/we-manage-img.png');
+                }
+                &.we-build{
+                    @include background-default();
+                    background-image: url('../images/we-build-img.png');
+                }
+            }
+
+        }
+    }
+}
+
+.services{
+    margin-bottom: toVw(115px);
+    &-top{
+        display: flex;
+        font-family: 'Open Sans';
+        h2{
+            font-size: toVw(18px);
+            margin-right: toVw(155px);
+            letter-spacing: toVw(2.30625px);
+        }
+        p{ 
+            width: toVw(405px);
+            font-size: toVw(11px);
+            margin-right: toVw(31px);
+        }
+    }
+    hr{
+        width: toVw(50px);
+        background-color: $c-blue;
+        height: toVw(2px);
+        border: none;
+    }
+    &-bottom{
+        @include flex-between();
+        .service{
+            border: toVw(1px) solid #E6E6E6;
+            padding: toVw(38px) toVw(22px) toVw(39px) toVw(23px);
+
+            img{
+                margin-bottom: toVw(25px);
+                width: toVw(65px);
+            }
+            h2{
+                font-family: 'Open Sans';
+                margin-bottom: toVw(25px);
+                font-weight: 600;
+                font-size: toVw(16px);
+            }
+            p{
+                font-family: 'Open Sans';
+                font-size: toVw(13px);
+                font-weight: 400;
+            }
+        }
+    }
+}
+.get-in-touch{
+    @include background-default();
+    background-image: url('../images/get-in-touch-bg.png');
+    height: toVw(499px);
+    text-align: center;
+    h1{
+        font-size: toVw(30px);
+        font-family: 'Open Sans';
+        padding-top: toVw(120px);
+        margin-bottom: toVw(35px);
+    }
+    button.btn.blue{
+        padding: toVw(11px) toVw(26px);
+    }
+}
+footer{
+    .footer-top{
+        background-color: #171819;
+        display: flex;
+        padding: toVw(30px) toVw(377px);
+        h2{
+            color: $c-white;
+            font-size: toVw(22px);
+            font-family: 'Open Sans';
+            font-weight: 600;
+            margin-right: toVw(70px);
+        }
+        &-mail{
+            input{
+                padding: toVw(10px) toVw(70px) toVw(10px) toVw(16px);
+                font-size: toVw(14px);
+                color: #48555B;
+                border: none;
+                &::placeholder{
+                    font-size: toVw(14px);
+                }
+            }
+            button.btn.blue{
+                padding: toVw(11px) toVw(48.5px);
+                &:active{
+                    box-shadow: 5px 5px 50px white;
+                }
+                }
+        }
+    }
+    .footer-bottom{
+        padding-left: toVw(249px);
+        padding-top: toVw(42px);
+        padding-bottom: toVw(40px);
+        background-color: #141A20;
+        display: flex;
+        .footer-bottom-left{
+            margin-right: toVw(71px);
+            h4{
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: toVw(11px);
+                color:$c-white;
+                margin-bottom: toVw(20px);
+            }
+            a{
+                img{
+                    width: toVw(101px);
+                    height: toVw(23px);
+                    margin-bottom: toVw(15px);
+                }
+            }
+            p{
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: toVw(11px);
+                color: $c-white;
+            }
+        }
+        .footer-bottom-links{
+            @include flex-between();
+            margin-right: toVw(58px);
+            h4{
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: toVw(11px);
+                color:$c-white;
+                margin-bottom: toVw(20px);
+            }
+            .menu{
+                margin-right: toVw(36px);
+                li{
+                    a{
+                        font-size: toVw(11px);
+                        font-family: 'Open Sans';
+                        font-weight: 400;
+                        line-height: toVw(25px);
+                    }
+                }
+                li.none{
+                    opacity: 0;
+                    margin-bottom: toVw(20px);
+                }
+            }
+        }
+        .footer-bottom-contact-us{
+            margin-right: toVw(70px);
+            h4{
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: toVw(11px);
+                color:$c-white;
+                margin-bottom: toVw(20px);
+            }
+            .menu{
+                margin-right: toVw(36px);
+                li{
+                    a{
+                        font-size: toVw(11px);
+                        font-family: 'Open Sans';
+                        font-weight: 400;
+                        line-height: toVw(25px);
+                    }
+                }
+            }
+        }
+        .footer-bottom-socials{
+            display: flex;
+            .social{
+                margin-right: toVw(25px);
+                &:last-child{
+                        margin-right: 0;
+                }
+                a{
+                    img{
+                            width: toVw(12px);
+                            height: toVw(12px);
+                    }
+                }
+            }
+        }
+    }
+    .footer-all-rights{
+        background-color: #171819;
+        padding: toVw(23px) toVw(566px);
+        h2{
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: toVw(11px);
+            color:$c-white;
+            line-height: toVw(13px);
+        }
+    }
+}

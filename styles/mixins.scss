@@ -1,0 +1,16 @@
+@mixin flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-center{
+    @include flex-between();
+    align-items: center;
+}
+
+@mixin background-default{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
