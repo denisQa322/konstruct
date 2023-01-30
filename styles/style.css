@@ -261,6 +261,10 @@ footer .footer-top h2 {
   font-weight: 600;
   margin-right: 4.8611111111vw;
 }
+footer .footer-top-mail {
+  display: flex;
+  flex-direction: row;
+}
 footer .footer-top-mail input {
   padding: 0.6944444444vw 4.8611111111vw 0.6944444444vw 1.1111111111vw;
   font-size: 0.9722222222vw;
@@ -330,10 +334,6 @@ footer .footer-bottom .footer-bottom-links .menu li a {
   font-family: "Open Sans";
   font-weight: 400;
   line-height: 1.7361111111vw;
-}
-footer .footer-bottom .footer-bottom-links .menu li.none {
-  opacity: 0;
-  margin-bottom: 1.3888888889vw;
 }
 footer .footer-bottom .footer-bottom-contact-us {
   margin-right: 4.8611111111vw;

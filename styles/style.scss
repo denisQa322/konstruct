@@ -263,6 +263,8 @@ footer{
             margin-right: toVw(70px);
         }
         &-mail{
+            display: flex;
+            flex-direction: row;
             input{
                 padding: toVw(10px) toVw(70px) toVw(10px) toVw(16px);
                 font-size: toVw(14px);
@@ -328,10 +330,6 @@ footer{
                         font-weight: 400;
                         line-height: toVw(25px);
                     }
-                }
-                li.none{
-                    opacity: 0;
-                    margin-bottom: toVw(20px);
                 }
             }
         }
